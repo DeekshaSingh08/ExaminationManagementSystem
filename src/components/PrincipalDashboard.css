@@ -1,4 +1,5 @@
 .principal-dashboard,.student-dashboard {
+    margin-top:40px;
     padding: 20px;
     background-color: #f8f9fa;
     border-radius: 8px;
@@ -66,7 +67,8 @@ html, body {
   margin: 5px 0px 5px 0px;
 }
 .search-bar-btn{
-  background-color: aqua;
+  background-color: #0d6efd;
+  color : white;
   padding: 5px;
 }
 
@@ -77,10 +79,11 @@ html, body {
       margin-bottom: 20px;
 }
 
-.seating-arrangement-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: 'center';
-    height: 100vh
+/* Add this to your seating-arrangement-container styles */
+.seating-arrangement-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px; /* Adjust based on header height */
+  margin: 0 auto; /* Center the content */
 }

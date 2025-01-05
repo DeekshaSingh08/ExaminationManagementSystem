@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { Button, Modal, Form } from 'react-bootstrap';
 import axios from '../Axios';
+import Header from './Header';
 
 function SeatingArrangement() {
   const { classroomId } = useParams();
@@ -12,6 +13,9 @@ function SeatingArrangement() {
   const [showModal, setShowModal] = useState(false);
   const [selectedSeat, setSelectedSeat] = useState(null);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
     axios.get(`http://localhost:8081/api/examinationmanagementsystem/exam-room/${classroomId}/seating-arrangement`)
       .then(response => setClassroom(response.data))
@@ -19,6 +23,10 @@ function SeatingArrangement() {
 
     
   }, [classroomId]);
+
+  const handleBackClick = () => {
+    navigate('/dashboard', { state: { activeTab: location.state?.activeTab } });
+  };
 
   const handleSeatClick = (row, col, seat) => {
     setSelectedSeat({ row, col });
@@ -59,7 +67,12 @@ function SeatingArrangement() {
 
   return (
     <div className='seating-arrangement-container'>
-      <h3 className="seating-arrangement-header">Seating Arrangement - {classroom ? classroom.name : 'Loading...'}</h3>
+      <Header title={`Seating Arrangement- ${classroom ? classroom.name : 'Loading...'}`} />
+      <div style={{ marginTop: '10px', marginBottom: '20px', alignSelf: 'flex-start' }}>
+        <Button variant="secondary" onClick={handleBackClick}>
+          Back to Classroom Seating
+        </Button>
+      </div>
 
       <div
         className="seating-grid"

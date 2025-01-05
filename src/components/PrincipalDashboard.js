@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
-import './PrincipalDashboard.css'; // Add any custom styles here
+import { useLocation } from 'react-router-dom'; 
+import './PrincipalDashboard.css';
 import StudentsDetailsTab from './StudentsDetailsTab';
 import ClassroomSeatingTab from './ClassroomSeatingTab';
+import Header from './Header';
 
 function PrincipalDashboard() {
+  const location = useLocation(); 
+  const [activeTab, setActiveTab] = useState(location.state?.activeTab || 'students'); 
+
   return (
     <div className="principal-dashboard">
-      <h2 className="text-center mb-4">Principal Dashboard</h2>
-      <Tabs defaultActiveKey="students" id="principal-dashboard-tabs" className="mb-3">
+      <Header title="Principal Dashboard" />
+      <Tabs
+        activeKey={activeTab} 
+        onSelect={(k) => setActiveTab(k)} 
+        id="principal-dashboard-tabs"
+        className="mb-3"
+      >
         <Tab eventKey="students" title="Display Students Details">
           <StudentsDetailsTab />
         </Tab>
-        <Tab eventKey="classrooms" title="Exam Room Seating Arrangement Details">
+        <Tab eventKey="classrooms" title="ExamRoom Seating Arrangement Details">
           <ClassroomSeatingTab />
         </Tab>
       </Tabs>

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './StudentDashboard.css';
 import axios from 'axios';
+import Header from './Header';
 
 
 function StudentDetailsTab() {
@@ -38,8 +39,9 @@ function StudentDetailsTab() {
   };
 
   return (
+    <>
+    <Header title="Student Dashboard" />
     <div className="student-dashboard">
-      <h1>Student Dashboard</h1>
       <h2>My Details</h2>
       {student && (
         <div>
@@ -85,6 +87,7 @@ function StudentDetailsTab() {
         <button onClick={handleEnrollSubjects}>Enroll Selected Subjects</button>
       </div>
     </div>
+    </>
   );
 }
 
