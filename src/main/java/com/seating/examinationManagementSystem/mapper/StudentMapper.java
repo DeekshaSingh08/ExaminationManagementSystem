@@ -2,6 +2,7 @@ package com.seating.examinationManagementSystem.mapper;
 
 import com.seating.examinationManagementSystem.dto.*;
 import com.seating.examinationManagementSystem.entity.Student;
+import com.seating.examinationManagementSystem.entity.StudentSolr;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +78,12 @@ public class StudentMapper {
         return student;
     }
 
+    public StudentSolr mapToSolr(Student student) {
+        StudentSolr studentSolr = new StudentSolr();
+        studentSolr.setStudentRollNo(String.valueOf(student.getStudentRollNo())); // Convert int to String
+        studentSolr.setStudentName(student.getStudentName().trim().toLowerCase().replaceAll("\\s+", ""));
+        return studentSolr;
+    }
 }
 
 

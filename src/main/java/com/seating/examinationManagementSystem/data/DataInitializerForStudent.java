@@ -3,7 +3,9 @@ package com.seating.examinationManagementSystem.data;
 import com.github.javafaker.Faker;
 import com.seating.examinationManagementSystem.entity.Student;
 import com.seating.examinationManagementSystem.entity.UserDetails;
+import com.seating.examinationManagementSystem.mapper.StudentMapper;
 import com.seating.examinationManagementSystem.repository.StudentRepository;
+import com.seating.examinationManagementSystem.repository.StudentSolrRepository;
 import com.seating.examinationManagementSystem.repository.UserDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -26,17 +28,17 @@ public class DataInitializerForStudent implements CommandLineRunner {
     @Autowired
     private UserDetailsRepository userDetailsRepository;
 
+    @Autowired
+    private StudentSolrRepository studentSolrRepository;
+
+    @Autowired
+    private StudentMapper studentMapper;
+
     @Override
     public void run(String... args) throws Exception {
         // Check if the number of students is less than 125
-
-        UserDetails principalUserDetails = new UserDetails();
-        principalUserDetails.setUserName("Deeksha");
-        principalUserDetails.setRole("Principal");
-        principalUserDetails.setPassword(getEncodedPassword("12345"));
-        userDetailsRepository.save(principalUserDetails);
-
         long studentCount = studentRepository.count();
+        //studentSolrRepository.deleteAll();
 
         if (studentCount < 125) {
             Faker faker = new Faker();
@@ -61,8 +63,9 @@ public class DataInitializerForStudent implements CommandLineRunner {
 
                 student.setUser(userDetailsRepository.save(userDetails));
 
-                // Save the student to the database
-                studentRepository.save(student);
+                Student studentSolr=studentRepository.save(student);
+                studentSolrRepository.save(studentMapper.mapToSolr(studentSolr));
+
             }
             System.out.println("Inserted new students into the database.");
         } else {
@@ -73,4 +76,3 @@ public class DataInitializerForStudent implements CommandLineRunner {
         return passwordEncoder.encode(password);
     }
 }
-
