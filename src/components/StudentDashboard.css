@@ -1,0 +1,104 @@
+/* src/components/StudentDashboard.css */
+.student-dashboard {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .student-dashboard h1 {
+    text-align: center;
+    color: #4caf50;
+    margin-bottom: 20px;
+  }
+  
+  .student-dashboard h2 {
+    color: #333;
+    border-bottom: 2px solid #4caf50;
+    padding-bottom: 5px;
+  }
+  
+  .student-dashboard p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .student-dashboard ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .student-dashboard ul li {
+    background-color: #e8f5e9;
+    padding: 8px 12px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    color: #2e7d32;
+    font-size: 14px;
+  }
+  
+  .student-dashboard select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .student-dashboard button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  .student-dashboard button:hover {
+    background-color: #45a049;
+  }
+  
+  .student-dashboard div {
+    margin-bottom: 20px;
+  }
+  
+  .student-dashboard .enrolled-subjects {
+    margin-top: 20px;
+  }
+  
+  .student-dashboard .enrolled-subjects h4 {
+    margin-bottom: 10px;
+  }
+  
+  /* src/components/StudentDashboard.css */
+.enrolled-subjects {
+    margin-top: 20px;
+  }
+  
+  .enrolled-subjects ul {
+    list-style-type: none;
+    padding: 0;
+    max-height: 100px; /* Fixed height for the list */
+    overflow-y: auto; /* Enable vertical scroll */
+    border: 1px solid #ddd; /* Optional: Add a border for better visibility */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #f9f9f9; /* Background color for better contrast */
+  }
+  
+  .enrolled-subjects ul li {
+    background-color: #e8f5e9;
+    padding: 8px 12px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    color: #2e7d32;
+    font-size: 14px;
+  }
+  

@@ -1,0 +1,86 @@
+.principal-dashboard,.student-dashboard {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  h3 {
+    margin-bottom: 20px;
+  }
+
+  .table {
+    background-color: white;
+  }
+
+  .table th {
+    background-color: #f2f2f2;
+  }
+
+  .table tr:hover {
+    background-color: #f9f9f9;
+  }
+
+  .table-container {
+    max-height: 400px; /* Set a fixed height for the table container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: auto; /* Enable horizontal scrolling for wide tables */
+    border: 1px solid #ddd; /* Optional: Add a border around the table */
+    padding-right: 5px; /* Avoid scrollbar overlap with table content */
+  }
+
+
+  /* Ensure the body and html use the full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Set a container for the content with padding */
+.container {
+  min-height: 100%; /* Allow it to grow with content */
+  box-sizing: border-box;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Fix scrolling for cards layout */
+.card-container {
+  max-height: calc(100vh - 150px); /* Adjust based on header and footer size */
+  overflow-y: auto; /* Add scrollbar if needed */
+  padding-right: 5px; /* Avoid scrollbar overlap */
+}
+
+/* Optional: Add spacing between cards */
+.card {
+  margin-bottom: 1rem;
+}
+
+.mb-4.classroom{
+  max-height: 500px;
+}
+
+.search-bar{
+  padding: 5px;
+  margin: 5px 0px 5px 0px;
+}
+.search-bar-btn{
+  background-color: aqua;
+  padding: 5px;
+}
+
+/* SeatingArrangement */
+.seating-arrangement-header{
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+}
+
+.seating-arrangement-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: 'center';
+    height: 100vh
+}
