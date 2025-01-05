@@ -19,7 +19,7 @@
 
 .student-dashboard h2 {
   color: #333;
-  border-bottom: 2px solid #4caf50;
+  border-bottom: 2px solid #0d6efd;
   padding-bottom: 5px;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .student-dashboard button {
-  background-color: #4caf50;
+  background-color: #0d6efd;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -64,7 +64,7 @@
 }
 
 .student-dashboard button:hover {
-  background-color: #45a049;
+  background-color: #0d6efd;
 }
 
 .student-dashboard div {
@@ -91,11 +91,11 @@
 }
 
 .enrolled-subjects ul li {
-  background-color: #e8f5e9;
+  background-color: #e2e7ee;
   padding: 8px 12px;
   margin-bottom: 5px;
   border-radius: 4px;
-  color: #2e7d32;
+  color: #555;
   font-size: 14px;
 }
 
